@@ -1,8 +1,12 @@
 console.log("working")
 
-import { home } from "./pages/home.js";
-import { about } from "./pages/about.js";
-import { menu } from './pages/menu.js'
+import { taskDiv } from "./pages/todoitem.js";
+// import { menu } from './pages/menu.js'
+import { populateStorage } from "./pages/storage.js";
+import { getStorage } from "./pages/storage.js";
+import { newTask1 } from "./pages/todoitem.js";
+
+getStorage()
 
 const contentDiv = document.getElementById('content')
 
@@ -13,17 +17,29 @@ navBtns.forEach(btn => btn.addEventListener('click', e => loadContent(e.target.i
 
 const loadContent = (pageId) => {
     switch (pageId) {
-        case 'home':
+        case 'dashboard':
             contentDiv.innerHTML = '';
             contentDiv.appendChild(home())
             break;
-        case 'menu':
+        case 'new':
             contentDiv.innerHTML = '';
-            contentDiv.appendChild(menu())
+            contentDiv.appendChild(taskDiv())
             break;
-        case 'about':
+        case 'settings':
             contentDiv.innerHTML = '';
-            contentDiv.appendChild(about())
+            contentDiv.appendChild(settings())
             break;
     }
 }
+
+// load dummy data into storage
+// populateStorage("test", JSON.stringify(newTask1))
+const test = JSON.parse(localStorage.getItem("test"))
+console.log(test)
+
+
+
+
+
+
+
