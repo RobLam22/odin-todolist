@@ -5,6 +5,7 @@ import { taskDiv } from "./pages/todoitem.js";
 import { populateStorage } from "./pages/storage.js";
 import { getStorage } from "./pages/storage.js";
 import { newTask1 } from "./pages/todoitem.js";
+import { newProjectDiv } from "./pages/newProject.js";
 
 getStorage()
 
@@ -23,7 +24,7 @@ const loadContent = (pageId) => {
             break;
         case 'new':
             contentDiv.innerHTML = '';
-            contentDiv.appendChild(taskDiv())
+            contentDiv.appendChild(newProjectDiv())
             break;
         case 'settings':
             contentDiv.innerHTML = '';
@@ -35,7 +36,7 @@ const loadContent = (pageId) => {
 // load dummy data into storage
 // populateStorage("test", JSON.stringify(newTask1))
 const test = JSON.parse(localStorage.getItem("test"))
-console.log(test)
+console.log(getStorage())
 
 
 
