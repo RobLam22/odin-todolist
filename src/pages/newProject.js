@@ -1,4 +1,5 @@
-import { getStorage, populateStorage } from "./storage"
+import { projects } from "./projectLists"
+import { populateStorage } from "./storage"
 
 export const newProjectDiv = () => {
     const newProjectDiv = document.createElement('div')
@@ -25,6 +26,7 @@ export const newProjectDiv = () => {
     submitBtn.innerText = 'OK'
     submitBtn.addEventListener('click', e => {
         const projectObj = { title: titleInput.value, description: descInput.value }
+        projects.newProject(titleInput.value)
         populateStorage(projectObj.title, JSON.stringify(projectObj))
     })
 
