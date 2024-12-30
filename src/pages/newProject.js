@@ -34,7 +34,5 @@ export const newProjectDiv = () => {
     newProjectDiv.appendChild(descInput)
     newProjectDiv.appendChild(submitBtn)
 
-
-    // submit.addEventListener('click', (e) => console.log({projectTitle, description, deadline}))
     return newProjectDiv
 }
