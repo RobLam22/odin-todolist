@@ -1,4 +1,4 @@
-import { projects } from "./projectLists"
+import { projects } from "./projectsManager"
 import { populateStorage } from "./storage"
 
 export const newProjectDiv = () => {

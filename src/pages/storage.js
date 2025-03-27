@@ -30,3 +30,7 @@ export const getStorage = () => {
 export const populateStorage = (key, data) => {
   localStorage.setItem(key, data)
 }
+
+export const retrieveStorage = (key) => {
+  localStorage.getItem(key)
+}

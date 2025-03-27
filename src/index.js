@@ -1,46 +1,38 @@
-console.log("working")
+console.log('working');
 
-import { taskDiv } from "./pages/todoitem.js";
-// import { menu } from './pages/menu.js'
-import { populateStorage } from "./pages/storage.js";
-import { getStorage } from "./pages/storage.js";
-import { newTask1 } from "./pages/todoitem.js";
-import { newProjectDiv } from "./pages/newProject.js";
+import { getStorage } from './pages/storage.js';
+import { newProjectDiv } from './pages/newProject.js';
+import { home } from './pages/home.js';
 
-getStorage()
+getStorage();
 
-const contentDiv = document.getElementById('content')
+const contentDiv = document.getElementById('content');
 
-const navBtns = Array.from(document.getElementById('navbar').children)
-console.log(navBtns)
+const navBtns = Array.from(document.getElementById('navbar').children);
+console.log(navBtns);
 
-navBtns.forEach(btn => btn.addEventListener('click', e => loadContent(e.target.id)))
+navBtns.forEach((btn) =>
+    btn.addEventListener('click', (e) => loadContent(e.target.id))
+);
 
 const loadContent = (pageId) => {
     switch (pageId) {
-        case 'dashboard':
+        case 'home':
             contentDiv.innerHTML = '';
-            contentDiv.appendChild(home())
+            contentDiv.appendChild(home());
             break;
         case 'new':
             contentDiv.innerHTML = '';
-            contentDiv.appendChild(newProjectDiv())
+            contentDiv.appendChild(newProjectDiv());
             break;
         case 'settings':
             contentDiv.innerHTML = '';
-            contentDiv.appendChild(settings())
+            contentDiv.appendChild();
             break;
     }
-}
+};
 
 // load dummy data into storage
 // populateStorage("test", JSON.stringify(newTask1))
-const test = JSON.parse(localStorage.getItem("test"))
-console.log(getStorage())
-
-
-
-
-
-
-
+const test = localStorage.getItem('test');
+console.log(test);
